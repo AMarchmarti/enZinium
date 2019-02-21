@@ -60,5 +60,11 @@ public class TokenContractTest {
         ricknillos.transfer(morty.getPK(), 2d);
         assertEquals(2d, ricknillos.getBalances().get(morty.getPK()), 0);
         assertEquals(98d, ricknillos.getBalances().get(rick.getPK()), 0);
+        //Reventa test, aplicado aqui para aprovechar el codigo anterior
+        Address jen = new Address();
+        jen.generateKeyPair();
+        ricknillos.transfer(morty.getPK(), jen.getPK(), 1);
+        assertEquals(1, ricknillos.getBalances().get(morty.getPK()), 0);
     }
+
 }
