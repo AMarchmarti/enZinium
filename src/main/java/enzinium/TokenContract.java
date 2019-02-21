@@ -129,4 +129,13 @@ public class TokenContract {
             }catch (AssertionError e){}
         }
 
+
+        public void owners(){
+            for (PublicKey pKey : getBalances().keySet()){
+                if (!pKey.equals(owner)){
+                    System.out.println("Owners = " + pKey.hashCode() + " " + getBalances().get(pKey) + " " + symbol());
+                }
+            }
+        }
+
 }
