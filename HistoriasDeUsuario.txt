@@ -1,1 +1,1 @@
-Rick quiere una direccion para guardar las claves publicas y privadas
+Rick quiere visualizar las direcciones para ver que hay
