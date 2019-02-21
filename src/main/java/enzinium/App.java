@@ -92,7 +92,7 @@ public class App {
 
         System.out.println("\n" + "Contrato de los Ricknillos" + "\n" +
                 "=========================="        );
-        System.out.println(ricknillos.toString());}
+        System.out.println(ricknillos.toString());
 
         /**
          * El contrato TokenContract contiene una tabla de balances
@@ -114,7 +114,7 @@ public class App {
          * @param PublicKey del propietario
          * @param cantidad de tokens que posee
          */
-/*
+
         ricknillos.addOwner(rick.getPK(), ricknillos.totalSupply());
         // verifica que Rick no se actualiza una vez que ya existe en el balance
         ricknillos.addOwner(rick.getPK(), 500d);
@@ -131,7 +131,7 @@ public class App {
          * Dada una direccion, devuelve su balance de tokens. Si no existe
          * el propietario, devuelve cero.
          */
-/*
+
         System.out.println("\n" + "Consulta de balances" + "\n" +
                 "===================="        );
 
@@ -339,4 +339,4 @@ public class App {
                 + " "
                 + ricknillos.symbol());
     }*/
-}
+}}
