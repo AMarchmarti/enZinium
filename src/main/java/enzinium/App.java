@@ -165,7 +165,7 @@ public class App {
          * @param una condicion que ha de verificarse (ser cierta)
          * Lanza una EXCEPCION si no se cumple la condicion
          */
-/*
+
         System.out.println("\n" + "Transferencia de entradas" + "\n" +
                 "========================="        );
 
