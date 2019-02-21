@@ -235,7 +235,7 @@ public class App {
          * @return muestra en consola la PublicKey de los compradores
          *         y el numero de tokens que han adquirido
          */
-/*
+
         System.out.println("\n" + "Lista de compradores" + "\n" +
                 "===================="        );
         ricknillos.owners();
