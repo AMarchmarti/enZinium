@@ -22,10 +22,6 @@ public class Address {
             this.SK = SK;
         }
 
-        public void setBalance(double balance) {
-            this.balance = balance;
-        }
-
         public void setSymbol(String symbol) {
             this.symbol = symbol;
         }
@@ -61,5 +57,10 @@ public class Address {
         public String toString(){
             return "\n" + "PK = " + getPK().hashCode() +  "\n"+
                     "Balance = " + getBalance() + getSymbol() + "\n";
+        }
+
+
+        public void addEZI(Double cantidad){
+             this.balance += cantidad;
         }
     }
