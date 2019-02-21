@@ -1,1 +1,1 @@
-Rick quiere ver las personas que han comprado entradas y cuantas han comprado, para hacerse una idea de quien va y el aforo
+Rick quiere ver las entradas vendida en su totalidad, para ver cuantas ha vendido
