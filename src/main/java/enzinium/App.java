@@ -58,7 +58,7 @@ public class App {
         System.out.println(morty.toString());
         System.out.println("\n" + "Address de Jen" + "\n" +
                 "==============="        );
-        System.out.println(jen.toString());}
+        System.out.println(jen.toString());
 
         /**
          * Crea una contrato inteligente de tipo TokenContract
@@ -84,7 +84,7 @@ public class App {
          * totalSupply()
          * @return el total de unidades de este token que actualmente existen.
          */
-/*
+
         TokenContract ricknillos = new TokenContract(rick);
         ricknillos.setName("Ricknillos");
         ricknillos.setSymbol("RNiLL");
@@ -92,7 +92,7 @@ public class App {
 
         System.out.println("\n" + "Contrato de los Ricknillos" + "\n" +
                 "=========================="        );
-        System.out.println(ricknillos.toString());
+        System.out.println(ricknillos.toString());}
 
         /**
          * El contrato TokenContract contiene una tabla de balances
