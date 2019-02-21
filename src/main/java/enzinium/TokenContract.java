@@ -110,4 +110,23 @@ public class TokenContract {
             }
         }
 
+
+        public void require(PublicKey keyVendedor, Double cantidad){
+            if (cantidad > getBalances().get(keyVendedor)){
+                throw new AssertionError();
+            }
+        }
+
+        public void transfer(PublicKey kVendedor, PublicKey kComprador, Double cantidad){
+            try{
+                require(kVendedor, cantidad);
+                getBalances().replace(kVendedor, getBalances().get(kVendedor) - cantidad);
+                if(!getBalances().containsKey(kComprador)){
+                    getBalances().put(kComprador, cantidad);
+                }else{
+                    getBalances().replace(kComprador, getBalances().get(kComprador) + cantidad);
+                }
+            }catch (AssertionError e){}
+        }
+
 }
