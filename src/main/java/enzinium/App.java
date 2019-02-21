@@ -265,7 +265,7 @@ public class App {
          * addEZI()
          * @param cantidad de enziniums
          */
-/*
+
         morty.addEZI(20d);
 
         System.out.println("\n" + "Recarga eZis de Morty" + "\n" +
