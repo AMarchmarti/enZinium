@@ -36,7 +36,7 @@ public class App {
          * Utiliza el metodo hashCode() de PublicKey para
          * mostrar la PublicKey en consola
          */
-/*
+
         System.out.println("\n" + "Address de Rick" + "\n" +
                 "==============="        );
         System.out.println(rick.toString());
