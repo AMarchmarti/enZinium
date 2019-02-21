@@ -47,7 +47,7 @@ public class TokenContractTest {
         assertEquals(1, ricknillos.numOwners(), 0);
         assertEquals(100d, ricknillos.balanceOf(rick.getPK()), 0);
     }
-/*
+
     @Test
     public void transferTest(){
         Address rick = new Address();
@@ -60,5 +60,5 @@ public class TokenContractTest {
         ricknillos.transfer(morty.getPK(), 2d);
         assertEquals(2d, ricknillos.getBalances().get(morty.getPK()), 0);
         assertEquals(98d, ricknillos.getBalances().get(rick.getPK()), 0);
-    }*/
+    }
 }
