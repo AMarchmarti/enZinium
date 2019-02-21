@@ -46,7 +46,7 @@ public class App {
          * y otra para Jen y visualizamos su direccion puvlica
          * y balance
          */
-/*
+
         Address morty = new Address();
         morty.generateKeyPair();
 
@@ -58,7 +58,7 @@ public class App {
         System.out.println(morty.toString());
         System.out.println("\n" + "Address de Jen" + "\n" +
                 "==============="        );
-        System.out.println(jen.toString());
+        System.out.println(jen.toString());}
 
         /**
          * Crea una contrato inteligente de tipo TokenContract

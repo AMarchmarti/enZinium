@@ -8,7 +8,7 @@ public class Address {
         private PublicKey PK = null;
         private PrivateKey SK = null;
         private double balance = 0d;
-        private String symbol = null;
+        private String symbol = "EZI";
 
 
         //SETTERS
@@ -57,5 +57,9 @@ public class Address {
         }
 
 
-
+        @Override
+        public String toString(){
+            return "\n" + "PK = " + getPK().hashCode() +  "\n"+
+                    "Balance = " + getBalance() + getSymbol() + "\n";
+        }
     }
