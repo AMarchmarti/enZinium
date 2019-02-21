@@ -26,7 +26,7 @@ public class TokenContractTest {
     }
 
     @Test
-    public void mapTest{
+    public void mapTest(){
         Address rick = new Address();
         TokenContract ricknillos = new TokenContract(rick);
         ricknillos.setTotalSupply(100);
