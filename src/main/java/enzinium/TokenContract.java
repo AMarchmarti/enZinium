@@ -138,4 +138,15 @@ public class TokenContract {
             }
         }
 
+
+        public Double totalTokensSold(){
+            double cont = 0d;
+            for (PublicKey pKey : getBalances().keySet()){
+                if(!pKey.equals(owner)){
+                    cont += getBalances().get(pKey);
+                }
+            }
+            return cont;
+        }
+
 }
