@@ -67,4 +67,18 @@ public class TokenContract {
         public void addOwner(PublicKey key, Double entradas){
             getBalances().putIfAbsent(key, entradas);
         }
+
+
+        public Integer numOwners(){
+            return getBalances().size();
+        }
+
+
+        public Double balanceOf(PublicKey key){
+            if (getBalances().containsKey(key)){
+                return getBalances().get(key);
+            }else{
+                return 0d;
+                }
+        }
 }
