@@ -20,7 +20,7 @@ public class AddressTest
         Address address = new Address();
         address.generateKeyPair();
         assertNotNull(address.getPK());
-        assertNotNull(address.getSk);
+        assertNotNull(address.getSK());
     }
 }
 
