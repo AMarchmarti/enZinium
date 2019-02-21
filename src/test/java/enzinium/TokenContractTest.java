@@ -40,9 +40,25 @@ public class TokenContractTest {
     public void balanceNumTest(){
         Address rick = new Address();
         TokenContract ricknillos = new TokenContract(rick);
+        ricknillos.setName("Ricknillos");
+        ricknillos.setSymbol("RNILL");
         ricknillos.setTotalSupply(100);
         ricknillos.addOwner(rick.getPK(), ricknillos.totalSupply());
         assertEquals(1, ricknillos.numOwners(), 0);
         assertEquals(100d, ricknillos.balanceOf(rick.getPK()), 0);
     }
+/*
+    @Test
+    public void transferTest(){
+        Address rick = new Address();
+        rick.generateKeyPair();
+        TokenContract ricknillos = new TokenContract(rick);
+        ricknillos.setTotalSupply(100);
+        ricknillos.addOwner(rick.getPK(), ricknillos.totalSupply());
+        Address morty = new Address();
+        morty.generateKeyPair();
+        ricknillos.transfer(morty.getPK(), 2d);
+        assertEquals(2d, ricknillos.getBalances().get(morty.getPK()), 0);
+        assertEquals(98d, ricknillos.getBalances().get(rick.getPK()), 0);
+    }*/
 }
