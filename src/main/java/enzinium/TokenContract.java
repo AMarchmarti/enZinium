@@ -95,7 +95,8 @@ public class TokenContract {
 
 
         public void require(Double cantidad){
-                throw new AssertionError((cantidad > getBalances().get(owner)));
+            if ((cantidad > getBalances().get(owner)))
+                throw new AssertionError();
         }
 
 
