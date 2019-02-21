@@ -11,3 +11,10 @@ nuestra plataforma enZinium.
 
 Cada usuario/a dipone de una Address /direccion en la plataforma, desde la
 que gestionar sus enZiniums y las entradas.
+
+
+El programa consta de de 4 clases que se explican su funcionamiento en el main:
+- **APP**: clase principal.
+- **GenSig**: clase para crear las claves.
+- **Address**: clase de las direcciones.
+- **TokenContract**: clase para la creación del contrato y su funcionamiento.
