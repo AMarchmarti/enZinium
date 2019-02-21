@@ -7,6 +7,7 @@ import java.util.Map;
 public class TokenContract {
 
         private PublicKey owner = null;
+        private Address address;
         private String name = null;
         private double totalSUpply = 0d;
         private String symbol = null;
@@ -14,7 +15,9 @@ public class TokenContract {
 
         //CONSTRUCTOR
         public TokenContract (Address address){
+            this.address = address;
             this.owner = address.getPK();
+
         }
 
 
@@ -81,4 +84,29 @@ public class TokenContract {
                 return 0d;
                 }
         }
+
+
+        public void transfer(PublicKey key, Double cantidad){
+            try{
+                require(cantidad);
+                changeTokens(key, cantidad);
+            }catch (AssertionError e){}
+        }
+
+
+        public void require(Double cantidad){
+                throw new AssertionError((cantidad > getBalances().get(owner)));
+        }
+
+
+        public void changeTokens(PublicKey key, Double cantidad){
+            getBalances().replace(owner, totalSupply() - cantidad);
+            if (!getBalances().containsKey(key)){
+                getBalances().put(key, cantidad);
+            }else{
+                getBalances().replace(key, getBalances().get(key) + cantidad);
+
+            }
+        }
+
 }
