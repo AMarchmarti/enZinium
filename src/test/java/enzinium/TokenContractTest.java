@@ -35,4 +35,14 @@ public class TokenContractTest {
         ricknillos.addOwner(rick.getPK(), ricknillos.totalSupply());
         assertEquals(100, ricknillos.getBalances().get(rick.getPK()), 0);
     }
+
+    @Test
+    public void balanceNumTest(){
+        Address rick = new Address();
+        TokenContract ricknillos = new TokenContract(rick);
+        ricknillos.setTotalSupply(100);
+        ricknillos.addOwner(rick.getPK(), ricknillos.totalSupply());
+        assertEquals(1, ricknillos.numOwners(), 0);
+        assertEquals(100d, ricknillos.balanceOf(rick.getPK()), 0);
+    }
 }
