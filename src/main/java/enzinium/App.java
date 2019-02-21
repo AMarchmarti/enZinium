@@ -210,7 +210,7 @@ public class App {
          * @param recipient PK
          * @param cantidad de tokens
          */
-/*
+
         System.out.println("\n" + "Reventa de entradas" + "\n" +
                 "==================="        );
 
