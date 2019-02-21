@@ -32,10 +32,6 @@ public class TokenContract {
             this.symbol = symbol;
         }
 
-        public void setBalances(Map<PublicKey, Double> balances) {
-            this.balances = balances;
-        }
-
 
         //GETTERS
 
@@ -65,5 +61,10 @@ public class TokenContract {
                     "symbol = " + symbol() + "\n" +
                     "totalSupply = " + totalSupply() + "\n"+
                     "owner Pk = " + owner.hashCode();
+        }
+
+
+        public void addOwner(PublicKey key, Double entradas){
+            getBalances().putIfAbsent(key, entradas);
         }
 }
