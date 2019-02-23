@@ -28,9 +28,9 @@ public class AddressTest
         rick.generateKeyPair();
         rick.addEZI(20d);
         assertEquals(20d, rick.getBalance(), 0);
-        /*
-        rick.transferEZI(20d);
-        assertEquals(40d, rick.getBalance(), 0d);*/
+
+        rick.transferEZI(rick.getPK(),20d);
+        assertEquals(40d, rick.getBalance(), 0d);
     }
 }
 
