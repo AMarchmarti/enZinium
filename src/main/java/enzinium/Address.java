@@ -63,4 +63,13 @@ public class Address {
         public void addEZI(Double cantidad){
              this.balance += cantidad;
         }
+
+
+        public void send(TokenContract ricknillos, Double enziniums){
+            ricknillos.payable(getPK(), enziniums);
+        }
+
+        public void transferEZI(PublicKey propietario, Double cantidad){
+            this.balance += cantidad;
+        }
     }
