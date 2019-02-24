@@ -70,7 +70,7 @@ public class Address {
                 ricknillos.require(enziniums > getBalance() );
                 this.balance -= enziniums;
                 ricknillos.payable(getPK(), enziniums);
-            }catch (AssertionError e){}
+            }catch (Exception e){}
         }
 
 
