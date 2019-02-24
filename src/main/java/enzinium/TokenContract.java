@@ -96,13 +96,13 @@ public class TokenContract {
             try{
                 require((cantidad > getBalances().get(getOwner())));
                 changeTokens(key, cantidad);
-            }catch (AssertionError e){}
+            }catch (Exception e){}
         }
 
 
-        public void require(Boolean permiso){
+        public void require(Boolean permiso) throws Exception{
             if (permiso)
-                throw new AssertionError();
+                throw new Exception();
         }
 
 
@@ -133,7 +133,7 @@ public class TokenContract {
                 }else{
                     getBalances().replace(kComprador, getBalances().get(kComprador) + cantidad);
                 }
-            }catch (AssertionError e){}
+            }catch (Exception e){}
         }
 
 
@@ -159,9 +159,11 @@ public class TokenContract {
 
         public void payable(PublicKey pKey, Double cantidad){
             double entradas = cantidad / COSTE;
-            if (entradas > 1d){
+            try{
+                require(entradas < 1d);
                 transfer(pKey, entradas);
                 owner().transferEZI(cantidad);}
+            catch (Exception e){}
         }
 
 }
