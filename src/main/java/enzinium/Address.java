@@ -66,10 +66,15 @@ public class Address {
 
 
         public void send(TokenContract ricknillos, Double enziniums){
-            ricknillos.payable(getPK(), enziniums);
+            try{
+                ricknillos.require(enziniums > getBalance() );
+                this.balance -= enziniums;
+                ricknillos.payable(getPK(), enziniums);
+            }catch (AssertionError e){}
+
         }
 
-        public void transferEZI(PublicKey propietario, Double cantidad){
+        public void transferEZI(Double cantidad){
             this.balance += cantidad;
         }
     }
