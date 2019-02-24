@@ -56,10 +56,13 @@ public class TokenContract {
             return this.balances;
         }
 
-        public PublicKey owner(){ return this.owner;}
+        public Address owner(){ return this.address;}
 
+    public PublicKey getOwner() {
+        return this.owner;
+    }
 
-        //LÓGICA
+    //LÓGICA
 
         @Override
         public String toString(){
@@ -91,21 +94,21 @@ public class TokenContract {
 
         public void transfer(PublicKey key, Double cantidad){
             try{
-                require(cantidad);
+                require((cantidad > getBalances().get(getOwner())));
                 changeTokens(key, cantidad);
             }catch (AssertionError e){}
         }
 
 
-        public void require(Double cantidad){
-            if ((cantidad > getBalances().get(owner())))
+        public void require(Boolean permiso){
+            if (permiso)
                 throw new AssertionError();
         }
 
 
         public void changeTokens(PublicKey key, Double cantidad){
             setTotalSupply(totalSupply() - cantidad);
-            getBalances().replace(owner(), totalSupply());
+            getBalances().replace(getOwner(), totalSupply());
             if (!getBalances().containsKey(key)){
                 getBalances().put(key, cantidad);
             }else{
@@ -114,16 +117,16 @@ public class TokenContract {
             }
         }
 
-
+/*
         public void require(PublicKey keyVendedor, Double cantidad){
             if (cantidad > getBalances().get(keyVendedor)){
                 throw new AssertionError();
             }
         }
-
+*/
         public void transfer(PublicKey kVendedor, PublicKey kComprador, Double cantidad){
             try{
-                require(kVendedor, cantidad);
+                require(cantidad > getBalances().get(kVendedor));
                 getBalances().replace(kVendedor, getBalances().get(kVendedor) - cantidad);
                 if(!getBalances().containsKey(kComprador)){
                     getBalances().put(kComprador, cantidad);
@@ -136,7 +139,7 @@ public class TokenContract {
 
         public void owners(){
             for (PublicKey pKey : getBalances().keySet()){
-                if (!pKey.equals(owner())){
+                if (!pKey.equals(getOwner())){
                     System.out.println("Owners = " + pKey.hashCode() + " " + getBalances().get(pKey) + " " + symbol());
                 }
             }
@@ -146,7 +149,7 @@ public class TokenContract {
         public Double totalTokensSold(){
             double cont = 0d;
             for (PublicKey pKey : getBalances().keySet()){
-                if(!pKey.equals(owner())){
+                if(!pKey.equals(getOwner())){
                     cont += getBalances().get(pKey);
                 }
             }
@@ -155,9 +158,10 @@ public class TokenContract {
 
 
         public void payable(PublicKey pKey, Double cantidad){
-            if ((cantidad % COSTE) == 0){
-                transfer(pKey, cantidad / COSTE);
-                address.transferEZI(owner(), cantidad);}
+            double entradas = cantidad / COSTE;
+            if (entradas > 1d){
+                transfer(pKey, entradas);
+                owner().transferEZI(cantidad);}
         }
 
 }
