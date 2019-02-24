@@ -71,8 +71,8 @@ public class Address {
                 this.balance -= enziniums;
                 ricknillos.payable(getPK(), enziniums);
             }catch (AssertionError e){}
-
         }
+
 
         public void transferEZI(Double cantidad){
             this.balance += cantidad;
