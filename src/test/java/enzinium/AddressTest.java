@@ -29,7 +29,7 @@ public class AddressTest
         rick.addEZI(20d);
         assertEquals(20d, rick.getBalance(), 0);
 
-        rick.transferEZI(rick.getPK(),20d);
+        rick.transferEZI(20d);
         assertEquals(40d, rick.getBalance(), 0d);
     }
 }
