@@ -67,7 +67,7 @@ public class Address {
 
         public void send(TokenContract ricknillos, Double enziniums){
             try{
-                ricknillos.require(enziniums > getBalance() );
+                ricknillos.require(enziniums < getBalance() );
                 this.balance -= enziniums;
                 ricknillos.payable(getPK(), enziniums);
             }catch (Exception e){}
